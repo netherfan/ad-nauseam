@@ -1,0 +1,12 @@
+<div>
+  <ngb-carousel class="carosello" *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div class="picsum-img-wrapper">
+        <img class="image-block" [src]="percorso + image + '.jpg'"/>
+      </div>
+      <div class="carousel-caption">
+        <button type="button" class="btn btn-light">Read review</button>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
