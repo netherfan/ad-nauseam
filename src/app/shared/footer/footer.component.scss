@@ -1,0 +1,66 @@
+.container {
+  background-color:white!important;
+  display: flex;
+  padding: 20px;
+  margin-left: 5%;
+}
+
+.icon {
+  width: 250px;
+  margin-top: -50px;
+}
+
+.scritta {
+  margin-top: -40px;
+  font-size: 40px;
+  font-family: "Fasthand", cursive;
+  margin-left: 15px;
+}
+
+.container .section{
+    flex-basis: 50%;
+    padding: 0 20px;
+}
+
+.section h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.section .content{
+    margin:20px 0 0 0;
+    position: relative;
+}
+
+.section .content::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background-color: #dd5f24;
+    top: -10px;
+}
+
+.center .content .fas{
+    font-size: 1.1rem;
+    background: transparent;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    border:1px solid #656565;
+}
+
+.center .content .text{
+    font-size: 1.0.6rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.copyright {
+  padding: 10px;
+}

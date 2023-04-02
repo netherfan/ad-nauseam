@@ -1,6 +1,44 @@
 .carosello img {
-  height: 500px;
-  width: 400px;
-  padding: 20px;
+  height: 500px!important;
+  width: 400px!important;
+  padding: 20px!important;
   background-color: black;
+}
+
+.picsum-img-wrapper {
+  height: 500px!important;
+  width: 400px!important;
+  margin-left: 37%;
+}
+
+.carousel-inner {
+  position: relative!important;
+  width: 40%!important;
+  overflow: hidden!important;
+  margin-left: 35%!important;
+  margin-top: 10%!important;
+}
+
+// .carousel-caption {
+//  height: 10px;
+//  width: 20%;
+// }
+
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.vettoriale {
+  width: 250px;
+  margin-left: 60%;
+  position: absolute;
+}
+
+#scritta_vettoriale {
+  margin-left: 64%;
+  position: absolute;
+  margin-top: 55px;
+  // font-family: 'Fasthand', cursive;
+
 }

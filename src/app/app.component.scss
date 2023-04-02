@@ -1,8 +1,9 @@
-.mio-carousel {
-  position: absolute; top:40%; left:35%;
-}
-
 .sfondo {
-  width:100%;
-  position: absolute;
+  background-image: url('../assets/images/sfondo.jpg');
+  width: 100%!important;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: 40px;
 }
