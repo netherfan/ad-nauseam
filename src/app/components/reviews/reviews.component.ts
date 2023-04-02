@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';+
-import { DataViewLayoutOptions } from 'primeng/dataview';
+import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/models/book.model';
 
 @Component({
   selector: 'app-reviews',
@@ -9,13 +9,15 @@ import { DataViewLayoutOptions } from 'primeng/dataview';
 
 export class ReviewsComponent implements OnInit{
 
-  products: Product[];
+  books: Book[];
 
   sortOptions: SelectItem[];
 
   sortOrder: number;
 
   sortField: string;
+
+  constructor() {}
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
