@@ -1,0 +1,136 @@
+<div class="row contenitore" style="border-radius: 25px;">
+  <div class="col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Subscribe and let everyone know your opinion!</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="colonna-sinistra">
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>person_outline</mat-icon>
+            <input placeholder="Type your name" type="text" id="name" name="name" class="form-control" formControlName="name" />
+            <!-- <label class="form-label" for="name">Il tuo nome</label> -->
+            <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">The Name field is required</p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>account_box</mat-icon>
+            <input placeholder="Choose an username" type="username" id="username" name="username" class="form-control" formControlName="username"/>
+            <!-- <label class="form-label" for="email">La tua email</label> -->
+            <p class="help is-danger" *ngIf="form.controls.username.hasError('required') && form.get('username').touched">The Username field is required</p>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>lock</mat-icon>
+            <input placeholder="Type a password" type="password" id="password" name="password" class="form-control" formControlName="password" />
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">The password field is required</p>
+            <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')">The password field must contain at lest 1 special character, 1 upper-case, 1 lower-case, 1 number and must be between 8 and 16 characters long</p>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>assessment</mat-icon>
+            <input placeholder="Yearly read books" type="number" id="yearly" name="yearly" class="form-control" formControlName="yearly" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="colonna-destra">
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>person</mat-icon>
+            <input placeholder="Type your surname" type="text" id="surname" name="surname" class="form-control" formControlName="surname" />
+            <!-- <label class="form-label" for="name">Il tuo nome</label> -->
+            <p class="help is-danger" *ngIf="!form.get('surname').valid && form.get('surname').touched">The Surname field is required</p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>mail_outline</mat-icon>
+            <input placeholder="Type your email" type="email" id="email" name="email" class="form-control" formControlName="email"/>
+            <!-- <label class="form-label" for="email">La tua email</label> -->
+            <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">The Email field is required</p>
+            <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').touched">Invalid Email</p>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>lock</mat-icon>
+            <input placeholder="Repeat password" type="password" id="repeatPassword" name="repeatPassword" class="form-control" formControlName="repeatPassword"/>
+            <!-- <label class="form-label" for="ripetiPassword">Ripeti password</label> -->
+            <p class="help is-danger" *ngIf="!form.get('repeatPassword').valid && form.get('repeatPassword').touched">The Repeat Password field is required</p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>favorite</mat-icon>
+            <select class="form-select" id="genre" required formControlName="genre">
+
+              <option selected disabled value="">Favorite genre</option>
+              <option>Fiction</option>
+              <option>Nonfiction</option>
+              <option>Drama</option>
+              <option>Poetry</option>
+              <option>Folktale</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <mat-icon>lock</mat-icon>
+            <input placeholder="Type a password" type="password" id="password" name="password" class="form-control" formControlName="password" />
+            <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">The password field is required</p>
+            <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')">The password field must contain at lest 1 special character, 1 upper-case, 1 lower-case, 1 number and must be between 8 and 16 characters long</p>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="conditions-panel">
+        <div class="form-check d-flex justify-content-center mb-5">
+          <div class="form-check-tot">
+            <input class="form-check-input me-2" type="checkbox" value="" id="accetto" name="accetto" formControlName="accetto"/>
+            <label class="form-check-label" for="accetto">
+              I agree to <a href="#!">Terms and Conditions</a>
+            </label>
+          </div>
+
+          <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Accept the Terms and Conditions to continue</p>
+        </div>
+
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+          <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Sign in!</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <div class=" col-xl-7  order-1 order-lg-2 colonna-dx">
+
+  </div>
+</div>

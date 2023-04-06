@@ -10,11 +10,14 @@ import { HeaderComponent } from './shared/header/header.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { ReviewsComponent } from './components/reviews/reviews.component';
-import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
-import { DropdownModule } from 'primeng/dropdown';
-import { RatingModule } from 'primeng/rating';
-import { ButtonModule } from 'primeng/button';
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule } from 'primeng/calendar';
+// import { ReviewsComponent } from './components/reviews/reviews.component';
+// import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+// import { DropdownModule } from 'primeng/dropdown';
+// import { RatingModule } from 'primeng/rating';
+// import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { ButtonModule } from 'primeng/button';
     CarouselComponent,
     FooterComponent,
     HomeComponent,
-    ReviewsComponent,
+    RegistrationComponent
+    // ReviewsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,10 +35,13 @@ import { ButtonModule } from 'primeng/button';
     BrowserAnimationsModule,
     MaterialExampleModule,
     NgbModule,
-    DataViewModule,
-    DropdownModule,
-    RatingModule,
-    ButtonModule
+    FormsModule,
+    ReactiveFormsModule,
+    CalendarModule
+    // DataViewModule,
+    // DropdownModule,
+    // RatingModule,
+    // ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
