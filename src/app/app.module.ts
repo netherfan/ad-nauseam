@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,12 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
+import { ReviewCardComponent } from './shared/review-card/review-card.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { ReviewsListComponent } from './components/reviews/reviews-list/reviews-list.component';
+import { DetailComponent } from './components/reviews/detail/detail.component';
+import { PaginatorModule } from 'primeng/paginator';
+
 // import { ReviewsComponent } from './components/reviews/reviews.component';
 // import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 // import { DropdownModule } from 'primeng/dropdown';
@@ -26,7 +33,11 @@ import { CalendarModule } from 'primeng/calendar';
     CarouselComponent,
     FooterComponent,
     HomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ReviewCardComponent,
+    ReviewsComponent,
+    ReviewsListComponent,
+    DetailComponent
     // ReviewsComponent
   ],
   imports: [
@@ -37,7 +48,9 @@ import { CalendarModule } from 'primeng/calendar';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    HttpClientModule,
+    PaginatorModule
     // DataViewModule,
     // DropdownModule,
     // RatingModule,

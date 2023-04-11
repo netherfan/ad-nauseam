@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
-import { BOOKS } from '../mocks/books.mock';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
-  constructor() { }
+  apiBaseUrl = 'api/books';
 
-  getBooks(): Observable<Book[]> {
-    return of (BOOKS);
+  constructor(private http: HttpClient) {}
+
+  findByTitle(title: string): Observable<Book>{
+    return this.http.get<Book>(`${this.apiBaseUrl}/title/${title}`);
   }
 }

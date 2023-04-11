@@ -113,13 +113,13 @@
       <div class="conditions-panel">
         <div class="form-check d-flex justify-content-center mb-5">
           <div class="form-check-tot">
-            <input class="form-check-input me-2" type="checkbox" value="" id="accetto" name="accetto" formControlName="accetto"/>
-            <label class="form-check-label" for="accetto">
+            <input class="form-check-input me-2" type="checkbox" value="" id="accept" name="accept" formControlName="accept"/>
+            <label class="form-check-label" for="accept">
               I agree to <a href="#!">Terms and Conditions</a>
             </label>
           </div>
 
-          <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Accept the Terms and Conditions to continue</p>
+          <p class="help is-danger" *ngIf="!form.get('accept').valid && form.get('accept').touched">Accept the Terms and Conditions to continue</p>
         </div>
 
         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
