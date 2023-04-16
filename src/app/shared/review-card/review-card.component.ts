@@ -4,6 +4,7 @@ import { take } from 'rxjs';
 import { Review } from 'src/app/models/review.model';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-review-card',
@@ -21,7 +22,8 @@ export class ReviewCardComponent implements OnInit {
 
   constructor (
     private reviewService: ReviewService,
-    private bookService: BookService
+    private bookService: BookService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -29,15 +31,31 @@ export class ReviewCardComponent implements OnInit {
   }
 
   takeReviews() {
-    this.reviewService.getReviews().pipe(take(1)).subscribe({
-      next: (res) => {
-        this.reviews = res;
-        this.totalReviews = this.reviews.length;
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+    // this.bookService.book.subscribe((res: any) => {
+    //   this.book = res;
+    // })
+
+    // if(this.book) {
+    //   this.reviewService.getReviewsByBook(this.book).pipe(take(1)).subscribe({
+    //     next: (res) => {
+    //       this.reviews = res;
+    //       this.totalReviews = this.reviews.length;
+    //     },
+    //     error: (err) => {
+    //       console.log(err);
+    //     }
+    //   });
+    // } else {
+      this.reviewService.getReviews().pipe(take(1)).subscribe({
+        next: (res) => {
+          this.reviews = res;
+          this.totalReviews = this.reviews.length;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    // }
   }
 
   paginate(event) {
@@ -45,16 +63,21 @@ export class ReviewCardComponent implements OnInit {
     this.page = event.page;
   }
 
-  getBookImage(title: string): string {
-    this.bookService.findByTitle(title).pipe(take(1)).subscribe({
-      next: (res) => {
-        this.book = res;
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-    return this.book.image;
+  // getBookImage(title: string): string {
+  //   this.bookService.findByTitle(title).pipe(take(1)).subscribe({
+  //     next: (res) => {
+  //       this.book = res;
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     }
+  //   });
+  //   return this.book.image;
+  // }
+
+  goToReview(review: Review) {
+    this.reviewService.review.next(review);
+    this.router.navigate(['reviewdetail']);
   }
 
 }

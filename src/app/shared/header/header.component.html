@@ -17,10 +17,7 @@
             <a class="nav-link active" aria-current="page" routerLink="home"><mat-icon>home</mat-icon> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="registration"><mat-icon>fingerprint</mat-icon> Login/Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="allreviews"><mat-icon>account_balance</mat-icon> All books</a>
+            <a class="nav-link" routerLink="allbooks"><mat-icon>account_balance</mat-icon> All books</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="allreviews"><mat-icon> comment</mat-icon> All reviews</a>
@@ -39,6 +36,15 @@
             <input class="form-control me-2" type="search" placeholder="Search book" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+
+          <li class="nav-item user" *ngIf="!authService.isLogged()">
+            <a class="nav-link" routerLink="login"><mat-icon>fingerprint</mat-icon> Login/Subscribe</a>
+          </li>
+          <li class="nav-item user" *ngIf="authService.isLogged()">
+            <mat-icon [ngClass]=" authService.isLogged() ? 'logged' : '' "> person</mat-icon><span class="name">Ciao {{user.name}}</span>
+            <a class="nav-link" routerLink="profilo"> - PROFILO </a>
+            <a class="nav-link" (click)="logout()" > - ESCI</a>
+          </li>
         </ul>
       </div>
     </div>

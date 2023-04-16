@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="card-container" *ngFor="let book of books | slice: (page * booksEachPage) - booksEachPage : page * booksEachPage">
+    <div class="card">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + book.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{book.author}}: {{book.title}}</h5>
+        <p class="card-text">{{book.description | slice: 0:250}}...</p>
+        <!-- <a class="btn btn-primary" (click)="goToBook(book)">See details</a> -->
+        <a class="btn btn-primary" (click)="goToReviews(book)">See reviews</a>
+        <!-- <a class="btn btn-primary" routerLink="/allreviews">Add review</a> -->
+      </div>
+    </div>
+  </div>
+  <p-paginator class="paginatore" (onPageChange)="paginate($event)" [rows]="booksEachPage" [totalRecords]="books.length" (rowsPerPageOptionsChange)="booksEachPage"></p-paginator>
+
+  <!-- <a class="btn btn-primary" *ngIf="user.role === 'admin'" routerLink="newbook">Aggiungi libro</a> -->
+  <a class="btn btn-primary" routerLink="/newbook">Add new book</a>
+</div>

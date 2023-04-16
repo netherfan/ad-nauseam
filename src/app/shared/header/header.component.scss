@@ -41,3 +41,28 @@ header {
   align-items: center;
   flex-direction: row-reverse;
 }
+
+.cornice {
+  position:absolute;
+}
+
+li.nav-item.user {
+  margin-left: 60px;
+  border: 1px solid #ffffff42;
+  border-radius: 8px;
+  padding: 0px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  .logged {
+    margin-bottom: 11px;
+    margin-right: 3px;
+  }
+
+  a.nav-link {
+    display: inline-block;
+  }
+}

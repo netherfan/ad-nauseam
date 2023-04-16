@@ -1,0 +1,23 @@
+<div class="accedi">
+  <h2>Sign in:</h2>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="form-login">
+    <label class="form-label" for="email">Your email:</label>
+    <input placeholder="email" type="email" name="email" class="form-control" ngModel/>
+    <br>
+
+    <label class="form-label" for="password">Password:</label>
+    <p-password name="password" class="form-control" [toggleMask]="true" [feedback]="false" ngModel></p-password>
+
+    <div class="form-line entra">
+      <button type="submit" class="btn btn-primary">LOG IN</button>
+      <div class="alert alert-danger" *ngIf="loginError">
+        {{loginError}}
+      </div>
+    </div>
+  </form>
+
+  <p class="registrati">
+    If you don't have an account <a routerLink="/registration">sign in</a>
+  </p>
+
+</div>

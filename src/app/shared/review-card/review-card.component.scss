@@ -1,0 +1,34 @@
+.book-image {
+  background-repeat: no-repeat;
+  background-size:20%;
+  height: 100px;
+  float:left;
+}
+
+.content {
+  float:right;
+  background-color: white;
+}
+
+img.rating {
+  float:right;
+  width: 150px!important;
+  // margin-left: 88%!important;
+}
+
+h2 {
+  float:left;
+}
+
+.card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a.btn.btn-primary {
+  margin-left: 42%;
+  margin-top: 30px;
+  width: 200px;
+  background-color: black;
+  border: solid grey;
+}

@@ -1,13 +1,13 @@
 <div>
-  <img class="vettoriale" src="../../../assets/images/immagine_vettoriale.webp">
-  <h2 id="scritta_vettoriale">Latest Reviews</h2>
+  <!-- <img class="vettoriale" src="../../../assets/images/immagine_vettoriale.webp">
+  <h2 id="scritta_vettoriale">Latest Reviewed!</h2> -->
   <ngb-carousel class="carosello" *ngIf="images">
     <ng-template ngbSlide *ngFor="let image of images">
       <div class="picsum-img-wrapper">
         <img class="image-block" [src]="percorso + image + '.jpg'"/>
       </div>
       <div class="carousel-caption">
-        <button type="button" class="btn btn-light">Read review</button>
+        <button type="button" class="btn btn-light">Read reviews</button>
       </div>
     </ng-template>
   </ngb-carousel>

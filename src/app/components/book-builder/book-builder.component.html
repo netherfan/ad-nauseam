@@ -1,0 +1,30 @@
+<div class="main-container">
+  <h1>Inserisci una nuova ricetta</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="title">Titolo</label>
+    <input type="text" name="title" class="form-control" formControlName="title">
+
+    <label for="description">Descrizione</label>
+    <!-- <ckeditor [editor]="Editor" [config]="editorConfig" class="descrizioneRicetta" formControlName="description">
+    </ckeditor> -->
+
+    <label for="image">foto</label>
+    <input type="text" name="image" class="form-control" formControlName="image">
+
+    <label for="difficulty">Difficoltà: </label>
+    <select name="difficulty" class="form-control" formControlName="difficulty">
+      <option value="">seleziona....</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label for="published">Pubblicare la ricetta: </label>
+    <input type="checkbox" value="true" class="check" formControlName="published">
+
+    <button type="submit" class="btn btn-primary">Inserisci ricetta</button>
+  </form>
+
+</div>

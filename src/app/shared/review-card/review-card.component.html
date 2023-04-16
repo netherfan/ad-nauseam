@@ -1,16 +1,20 @@
 <div class="container-review">
 
-  <div class="container-pagination">
-    <!-- <div>
-      <strong>{{ricettePerPagina}}</strong> ricette su un totale di <strong>{{ricette.length}}</strong> ricette, pagina corrente: <strong>{{page}}</strong>
-    </div> -->
-
-    <p-paginator (onPageChange)="paginate($event)" [rows]="reviewsEachPage" [totalRecords]="totalReviews" (rowsPerPageOptionsChange)="reviewsEachPage"></p-paginator>
-  </div>
-
   <div class="card-container" *ngFor="let review of reviews | slice: (page * reviewsEachPage) - reviewsEachPage : page * reviewsEachPage">
 
-    <div class="review">
+    <div class="card">
+      <div class="card-header">
+        <h2>{{review.book}}: {{review.title}}</h2>
+        <img class="rating" [src]="ratingPath + review.rating + '.png'">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Written by: {{review.author}}</h5>
+        <p class="card-text">{{review.content | slice: 0: 250}}...</p>
+        <a href="#" class="btn btn-primary" (click)="goToReview(review)">Read Review</a>
+      </div>
+    </div>
+
+    <!-- <div class="review">
       <div class="review-header">
         <h2>{{review.book}}: {{review.title}}</h2>
         <img class="rating" [src]="ratingPath + review.rating + '.png'">
@@ -18,12 +22,19 @@
       <div class="review-body">
         <h2>Written by: {{review.author}}</h2>
         <div class="book-image" [ngStyle]="{'background-image': 'url(' + getBookImage(review.book) + ')'}">
-        <p>{{review.content}}</p>
+        <p class="content">{{review.content}}</p>
       </div>
       <a class="btn btn-primary">Open</a>
-    </div>
+    </div> -->
 
   </div>
 
+  <div class="container-pagination">
+    <!-- <div>
+      <strong>{{ricettePerPagina}}</strong> ricette su un totale di <strong>{{ricette.length}}</strong> ricette, pagina corrente: <strong>{{page}}</strong>
+    </div> -->
+
+    <p-paginator (onPageChange)="paginate($event)" [rows]="reviewsEachPage" [totalRecords]="totalReviews" (rowsPerPageOptionsChange)="reviewsEachPage"></p-paginator>
+  </div>
 
 </div>
